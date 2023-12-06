@@ -167,3 +167,7 @@ One of the easiest method to do log collection and monitoring is to enable Conta
 To be notified based on [certain pattern](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntaxForMetricFilters.html) in a log file, you can create a CloudWatch Metric Filter: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringPolicyExamples.html
 
 And then, based on that Metric Filter, you can [create a CloudWatch Alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_alarm_log_group_metric_filter.html) which in turn can be used to trigger an SNS topic (e.g. to send message through Slack)
+
+
+## Workshop
+AWS has a good practical workshop on EKS that you can do at your own pace, available at https://www.eksworkshop.com.
