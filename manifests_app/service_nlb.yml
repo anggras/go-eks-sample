@@ -10,7 +10,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: go-server
+    app: simple-go
   ports:
     - protocol: TCP
       port: 80

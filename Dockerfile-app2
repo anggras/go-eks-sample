@@ -1,11 +1,11 @@
 FROM golang:1.19
 
-WORKDIR /app
+WORKDIR /app2
 
-COPY /app /app
+COPY /app2 /app2
 
 RUN go build main.go
 
 EXPOSE 8000
 
-CMD ["/app/main"]
+CMD ["/app2/main"]

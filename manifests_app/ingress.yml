@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-app-ingress
+  namespace: simple-app
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: simple-app-group
+    alb.ingress.kubernetes.io/healthcheck-path: /
+spec:
+  ingressClassName: alb
+  rules:
+  - http:
+      paths:
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service:
+            name: simple-app-service
+            port:
+              number: 80

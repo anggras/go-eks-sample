@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-app2-deployment
+  namespace: simple-app2
+  labels:
+    app: simple-go
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-go
+  template:
+    metadata:
+      labels:
+        app: simple-go
+    spec:
+      containers:
+      - name: simple-app2
+        image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<app2_repository_name>:latest
+        ports:
+        - name: http
+          containerPort: 8000
+          protocol: TCP
+        env:
+          - name: PORT
+            value: "8000"
